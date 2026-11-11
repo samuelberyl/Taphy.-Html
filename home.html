@@ -1,0 +1,564 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Every Child Matters | Children's Rights</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #f8fbff;
+    color: #333;
+}
+
+/* NAVIGATION */
+header {
+    background: #075985;
+    padding: 18px 7%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: white;
+    font-size: 27px;
+}
+
+.logo span {
+    color: #facc15;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-links a:hover {
+    color: #facc15;
+}
+
+.menu-btn {
+    display: none;
+    background: none;
+    color: white;
+    border: none;
+    font-size: 27px;
+    cursor: pointer;
+}
+
+/* HERO */
+.hero {
+    min-height: 580px;
+    display: flex;
+    align-items: center;
+    padding: 70px 10%;
+    background:
+    linear-gradient(90deg, rgba(3,40,70,.85), rgba(3,40,70,.3)),
+    url("https://images.unsplash.com/photo-1472162314594-eca3c3d90c20?auto=format&fit=crop&w=1600&q=80")
+    center/cover;
+    color: white;
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.hero h1 {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: #facc15;
+}
+
+.hero p {
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    background: #facc15;
+    color: #123;
+    padding: 14px 25px;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #eab308;
+}
+
+/* GENERAL SECTIONS */
+.section {
+    padding: 75px 8%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.section-title h2 {
+    color: #075985;
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.section-title p {
+    color: #666;
+}
+
+/* ABOUT */
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+    line-height: 1.8;
+}
+
+.about-content h3 {
+    color: #075985;
+    margin-bottom: 15px;
+}
+
+.about-card {
+    background: #e0f2fe;
+    padding: 30px;
+    border-radius: 12px;
+}
+
+/* RIGHTS */
+.rights {
+    background: #eaf6ff;
+}
+
+.rights-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.right-card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,.06);
+    transition: .3s;
+}
+
+.right-card:hover {
+    transform: translateY(-8px);
+}
+
+.icon {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.right-card h3 {
+    color: #075985;
+    margin-bottom: 12px;
+}
+
+.right-card p {
+    line-height: 1.6;
+    color: #666;
+}
+
+/* PROTECTION */
+.protection-content {
+    max-width: 850px;
+    margin: auto;
+    line-height: 1.8;
+}
+
+.protection-content h3 {
+    color: #075985;
+    margin: 20px 0 10px;
+}
+
+.protection-content ul {
+    padding-left: 25px;
+}
+
+.help-box {
+    background: #075985;
+    color: white;
+    padding: 30px;
+    text-align: center;
+    border-radius: 12px;
+    margin-top: 30px;
+}
+
+.help-box h2 {
+    font-size: 45px;
+    color: #facc15;
+}
+
+/* LAWS */
+.laws {
+    background: #eaf6ff;
+}
+
+.laws-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.laws-content div {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    line-height: 1.8;
+}
+
+.laws-content h3 {
+    color: #075985;
+    margin-bottom: 15px;
+}
+
+/* CONTACT */
+.contact form {
+    max-width: 600px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact input,
+.contact textarea {
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+.contact textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.contact button {
+    width: 170px;
+}
+
+#response {
+    color: #087c45;
+    font-weight: bold;
+}
+
+/* FOOTER */
+footer {
+    background: #063b5c;
+    color: white;
+    text-align: center;
+    padding: 35px 15px;
+    line-height: 2;
+}
+
+footer h2 {
+    color: #facc15;
+}
+
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 768px) {
+
+    .menu-btn {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 65px;
+        left: 0;
+        width: 100%;
+        background: #075985;
+        flex-direction: column;
+        text-align: center;
+        padding: 25px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .rights-container {
+        grid-template-columns: 1fr;
+    }
+
+    .about-content,
+    .laws-content {
+        grid-template-columns: 1fr;
+    }
+
+    .section {
+        padding: 55px 6%;
+    }
+}
+
+</style>
+<body>
+
+<header>
+    <nav class="navbar">
+        <h2 class="logo">Child<span>Rights.</span></h2>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#rights">Our Rights</a></li>
+            <li><a href="#protection">Protection</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    </nav>
+</header>
+
+<!-- HOME SECTION -->
+<section class="hero" id="home">
+    <div class="hero-content">
+        <h1>Every Child Deserves a <span>Better Future</span></h1>
+
+        <p>
+            Every child has the right to education, healthcare,
+            protection, equality, love and a safe environment.
+        </p>
+
+        <a href="#rights" class="btn">Explore Children's Rights</a>
+    </div>
+</section>
+
+<!-- ABOUT SECTION -->
+<section class="about section" id="about">
+    <div class="section-title">
+        <h2>About Children's Rights</h2>
+        <p>Understanding and protecting every child's future.</p>
+    </div>
+
+    <div class="about-content">
+        <div>
+            <h3>What Are Children's Rights?</h3>
+            <p>
+                Children's rights are the basic freedoms and protections
+                that every child deserves regardless of their background,
+                gender, religion, disability or social status.
+            </p>
+
+            <p>
+                These rights help children grow, learn, stay healthy
+                and live free from violence, discrimination and neglect.
+            </p>
+        </div>
+
+        <div class="about-card">
+            <h3>Our Mission</h3>
+            <p>
+                To create awareness, promote equality and protect
+                every child's rights for a brighter future.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- RIGHTS SECTION -->
+<section class="rights section" id="rights">
+    <div class="section-title">
+        <h2>Every Child Has Rights</h2>
+        <p>Here are six important rights every child should enjoy.</p>
+    </div>
+
+    <div class="rights-container">
+
+        <div class="right-card">
+            <div class="icon">📚</div>
+            <h3>Right to Education</h3>
+            <p>
+                Every child deserves access to quality education
+                and opportunities to learn.
+            </p>
+        </div>
+
+        <div class="right-card">
+            <div class="icon">🏥</div>
+            <h3>Right to Healthcare</h3>
+            <p>
+                Every child has the right to medical care,
+                good health and proper nutrition.
+            </p>
+        </div>
+
+        <div class="right-card">
+            <div class="icon">🏠</div>
+            <h3>Right to Shelter</h3>
+            <p>
+                Every child deserves a safe home,
+                clothing and basic necessities.
+            </p>
+        </div>
+
+        <div class="right-card">
+            <div class="icon">🛡️</div>
+            <h3>Right to Protection</h3>
+            <p>
+                Children must be protected against abuse,
+                exploitation, violence and neglect.
+            </p>
+        </div>
+
+        <div class="right-card">
+            <div class="icon">⚖️</div>
+            <h3>Right to Equality</h3>
+            <p>
+                All children deserve equal treatment
+                without discrimination.
+            </p>
+        </div>
+
+        <div class="right-card">
+            <div class="icon">🗣️</div>
+            <h3>Right to Be Heard</h3>
+            <p>
+                Every child has the right to express
+                their views and opinions.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<!-- PROTECTION SECTION -->
+<section class="protection section" id="protection">
+    <div class="section-title">
+        <h2>Protect Every Child</h2>
+        <p>Children deserve a world free from fear and violence.</p>
+    </div>
+
+    <div class="protection-content">
+        <h3>Say NO to Child Abuse</h3>
+
+        <p>
+            Child abuse includes physical, emotional and sexual abuse,
+            neglect and exploitation. Every child deserves safety,
+            respect and dignity.
+        </p>
+
+        <h3>How Can We Protect Children?</h3>
+
+        <ul>
+            <li>Report suspected child abuse.</li>
+            <li>Provide children with safe environments.</li>
+            <li>Encourage children to speak freely.</li>
+            <li>Promote access to education.</li>
+            <li>Teach children about their rights.</li>
+        </ul>
+
+        <div class="help-box">
+            <h3>Need Help in Kenya?</h3>
+            <p>
+                Children and concerned adults can contact the
+                Kenya Child Helpline.
+            </p>
+            <h2>116</h2>
+            <p>Free Child Helpline</p>
+        </div>
+    </div>
+</section>
+
+<!-- LAWS SECTION -->
+<section class="laws section">
+    <div class="section-title">
+        <h2>Children's Rights Laws</h2>
+        <p>Legal frameworks that protect children.</p>
+    </div>
+
+    <div class="laws-content">
+        <div>
+            <h3>United Nations Convention on the Rights of the Child</h3>
+            <p>
+                The UN Convention on the Rights of the Child
+                establishes international standards for protecting
+                children's civil, political, economic, social
+                and cultural rights.
+            </p>
+        </div>
+
+        <div>
+            <h3>Children Act, 2022 – Kenya</h3>
+            <p>
+                Kenya's Children Act, 2022 provides a legal framework
+                for children's care, protection, welfare and rights.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section class="contact section" id="contact">
+    <div class="section-title">
+        <h2>Contact Us</h2>
+        <p>Join us in promoting and protecting children's rights.</p>
+    </div>
+
+    <form id="contactForm">
+        <input type="text" id="name" placeholder="Your Name" required>
+
+        <input type="email" id="email" placeholder="Your Email" required>
+
+        <textarea id="message" placeholder="Your Message" required></textarea>
+
+        <button type="submit" class="btn">Send Message</button>
+
+        <p id="response"></p>
+    </form>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <h2>ChildRights.</h2>
+    <p>Every Child Matters. Every Right Counts.</p>
+    <p>&copy; 2026 Every Child Matters. All Rights Reserved. || ryan code</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
